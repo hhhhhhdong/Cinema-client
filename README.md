@@ -1,3 +1,11 @@
+# 6-Dragon-Cinema
+
+**육룡이시네마(6-Dragon-Cinema)는 영화를 좋아한다면 누구나 영화평론가가 될수 있는 웹사이트 입니다.**
+
+> https://6-dragon-cinema.netlify.app/
+
+
+
 ## 개발 개요
 
 - 추천 알고리즘을 이용한 영화 추천
