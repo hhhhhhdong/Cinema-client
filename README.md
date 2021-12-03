@@ -1,31 +1,19 @@
 ## 개발 개요
 
-- 영화정보개발 추천 서비스 구성
-- 커뮤니티 서비스 구성
-- HTML, CSS, JavaScript, Vue.js, Django, REST API, DataBase등을 활용한 실제 서비스 설계
+- 추천 알고리즘을 이용한 영화 추천
+- 영화 리뷰를 통한 커뮤니티
 
 
-
-## 개발환경
-
-### 언어 및 도구
-
-- python
-- django
-- vue.js
-- VSCode
-- Chrome Browser
 
 ### 아키텍처
 
-- **Django REST API 서버 & Vue.js**
+- **Django 서버 & Vue.js**
 
 
 
 ## 서비스 개요
 
 - TMDB API로 popular 영화 정보(100개)를 DB에 저장
-- PC 전용 웹
 - 영화 커뮤니티에 필요한 기능
   - 리뷰 작성, 수정, 삭제
     - 별점, 제목, 내용
@@ -34,26 +22,18 @@
   - 유저 팔로우 기능
 - 추천
   - 영화하나에는 장르가 여러개(액션, 모험, 판타지 등)
-  - 리뷰 작성시 평가한 별점이 영화 장르들의 점수를 올려주고
-    장르의 점수가 높은 순으로
-    장르의 영화를 추천함
-- HTML, CSS 디자인
-
-
+  - 리뷰 작성시 평가한 별점이 영화 장르들의 점수를 올려주고 장르의 점수가 높은 순으로 영화를 추천
 
 
 
 # 상세 내용
 
-## front
-
 ### 패키지
 
 - vuex
 
-  - jwt 토큰으로 로그인 유무확인,
-    로그인 유저정보를 vuex에 저장
-
+  - jwt 토큰으로 로그인 유무확인, 로그인 유저정보를 vuex에 저장
+  
 - axios 비동기 요청
 
 - vue-router
@@ -67,52 +47,11 @@
   - swiper
   - vue-star-rating
 
-### 컴포넌트 구조
-
-![image-20211125115502489](README.assets/image-20211125115502489.png)
-
-- Home.vue
-
-  - popularMovies.vue
-    - movieCard.vue
-  - topRatedMovies.vue
-    - movieCard.vue
-
-  - genreMovies.vue
-    - genreMoviesItem.vue
-      - movieCard.vue
-
-
-
-- Community.vue (팔로우한 유저의 리뷰)
-  - review/reviewCard.vue
-
-- Recommend.vue (추천)
-  - recommend/MovieCard.vue
-
-- shop.vue
-
-- profile.vue
-  - review/reviewCard.vue
-
-
-
-- movie.vue (영화 상세페이지)
-
-  - movieDetail.vue (영화 정보)
-
-  - review.vue (리뷰 목록, 작성)
-    - reviewList.vue
-      - reviewListItem.vue (여기서 reviewDetail.vue로 이동)
-      - CreateReview.vue
-
-- reviewDetail.vue (리뷰 상세페이지)
-
 
 
 ### 주요 기능 설명
 
-#### 로그인
+#### 1. Login
 
 - 팔로우와 좋아요 기능 구현을 위해서는 로그인 유저정보가 필요
 
@@ -188,7 +127,7 @@
 
 
 
-#### Home
+#### 2. Home
 
 육룡이 시네마 메인 페이지
 
@@ -207,7 +146,7 @@
 
 
 
-#### Community (팔로우한 유저의 리뷰)
+#### 3. Community (팔로우한 유저의 리뷰)
 
 ![image-20211125134137211](README.assets/image-20211125134137211.png)
 
@@ -218,7 +157,7 @@
 
 
 
-#### profile
+#### 4. Profile
 
 ![image-20211125134257553](README.assets/image-20211125134257553.png)
 
@@ -227,7 +166,7 @@
 
 
 
-#### Recommend (추천)
+#### 5. Recommend (추천)
 
 ![image-20211125134645989](README.assets/image-20211125134645989.png)
 
@@ -237,18 +176,16 @@
 
 
 
-#### movie (영화 상세페이지)
+#### 6. Movie Detail (영화 상세페이지)
 
 ![image-20211125135444901](README.assets/image-20211125135444901.png)
 
 - movieDetail.vue (영화 정보)
 
   - 상단에는 영화정보
-    - TMDB API로 영화의 예고편 또는 티저 유튜브 영상 링크를 받고
-      영화정보 상단에 유튜브 영상 출력
-    - 영상밑에는
-      영화 상세정보 표시
-
+    - TMDB API로 영화의 예고편 또는 티저 유튜브 영상 링크를 받고 영화정보 상단에 유튜브 영상 출력
+    - 영상밑에는 영화 상세정보 표시
+  
 - review.vue (리뷰 목록, 작성)
 
   - 좋아요 기능
@@ -266,7 +203,7 @@
 
     
 
-#### reviewDetail (리뷰 상세페이지)
+#### 7. Review Detail (리뷰 상세페이지)
 
 ![image-20211125135803506](README.assets/image-20211125135803506.png)
 
